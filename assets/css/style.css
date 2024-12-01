@@ -362,10 +362,11 @@ header .navbar ul li a:hover {
 .about .row .image img {
   margin: 4rem;
   width: 30rem;
-  height: auto;
-  border-radius: 5%;
+  height: 30rem; /* Make height equal to width to maintain circular shape */
+  border-radius: 50%; /* Ensures the image is circular */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   mix-blend-mode: luminosity;
+  object-fit: cover; /* Ensures the content fits the circular frame */
   transition: 0.3s;
   cursor: pointer;
 }
