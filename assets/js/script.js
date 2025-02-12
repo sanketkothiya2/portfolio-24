@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "data analyst", "full stack development","Dev ops", "web development"],
+    strings: ["frontend development", "backend development", "web designing", "data analyst", "full stack development", "Dev ops", "web development"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -106,11 +106,13 @@ function showSkills(skills) {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
+    // <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
     let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project" />
+      <img src="assets/images/projects/newsboxandroid.png" alt="">
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
@@ -119,7 +121,6 @@ function showProjects(projects) {
           <p>${project.desc}</p>
           <div class="btns">
             <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
           </div>
         </div>
       </div>

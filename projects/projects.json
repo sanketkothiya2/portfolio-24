@@ -40,13 +40,12 @@
     }
   },
   {
-    "name": "Instagram MERN",
-    "desc": "Full-Stack Instagram clone built using MERN stack and realtime chat with the help of socket.iO",
-    "image": "instagrammern",
-    "category": "mern",
+    "name": "LiveField Construction App",
+    "desc": "I worked on backend development and data analysis during my tenure at the company",
+    "image": "livefield",
+    "category": "mern + data analysis",
     "links": {
-      "view": "https://instagramernstack.herokuapp.com/",
-      "code": "https://github.com/jigar-sable/instagram-mern"
+      "view": "https://livefield.app/"
     }
   },
   {
@@ -60,32 +59,32 @@
     }
   },
   {
-    "name": "ResumeGen",
-    "desc": "ReactJS Basic Resume Generator which will generate customized resume in few minutes on your requirements.",
-    "image": "resumegen",
-    "category": "mern",
+    "name": "Nilo",
+    "desc": "The Nilo Smart Toothbrush uses bluetooth to seamlessly connect with our mobile application.",
+    "image": "nilo",
+    "category": "mern + nft/ft",
     "links": {
-      "view": "https://resumegenx.netlify.app/",
+      "view": "https://www.nilo.gg/",
       "code": "https://github.com/jigar-sable/resumegen"
     }
   },
   {
-    "name": "React-Projects",
-    "desc": "Full-Stack project dashboard which is collection of projects built on the React library.",
-    "image": "reactprojects",
+    "name": "Ellusho",
+    "desc": "Connect with caring professionals anywhere, anytime. Pay-per-minute support tailored to you. Your mental well-being matters.",
+    "image": "ellusho",
     "category": "mern",
     "links": {
-      "view": "https://reactjsprojects.herokuapp.com/",
+      "view": "https://ellusho.com/",
       "code": "https://github.com/jigar-sable/React-Projects"
     }
   },
   {
-    "name": "Flipkart PHP",
-    "desc": "Full-Stack Flipkart Clone Using LAMP Stack. With all major features and OTP authentication and Cashfree payment gateway.",
-    "image": "flipkartphp",
-    "category": "lamp",
+    "name": "DriveNow CarRentals",
+    "desc": "DriveNow CarRentals: Your trusted partner for convenient, reliable, and affordable car rental solutions.",
+    "image": "drivenow",
+    "category": "mern",
     "links": {
-      "view": "https://github.com/jigar-sable/Flipkart-Clone-PHP",
+      "view": "https://drivenow.rent/",
       "code": "https://github.com/jigar-sable/Flipkart-Clone-PHP"
     }
   },
