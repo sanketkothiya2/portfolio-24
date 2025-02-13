@@ -89,13 +89,14 @@
     }
   },
   {
-    "name": "JavaScript Projects Website",
-    "desc": "This website is specially build to showcase all major javaScript projects. All my javaScript based projects are in it.",
-    "image": "jspro",
+    "name": "Selenium Web Crawling",
+    "desc": "This Car Rental System leverages Selenium WebDriver to extract real-time data from live car rental websites ",
+    "image": "carrental",
     "category": "basicweb",
     "links": {
-      "view": "https://jigar-sable.github.io/JavaScript-Projects",
-      "code": "https://github.com/jigar-sable/JavaScript-Projects"
+      "view": "https://github.com/sanketkothiya2/car-rental",
+      "code": "https://github.com/jigar-sable/Flipkart-Clone-PHP"
+
     }
   },
   {
