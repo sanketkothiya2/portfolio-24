@@ -23,8 +23,8 @@ $(document).ready(function () {
             let id = $(this).attr('id');
 
             if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+                $('.nav-links a').removeClass('active');
+                $('.nav-links').find(`[href="#${id}"]`).addClass('active');
             }
         });
     });
@@ -105,34 +105,54 @@ function showSkills(skills) {
 }
 
 function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    // <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+    let projectsContainer = document.querySelector("#projectsContainer");
     let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+
+    projects.forEach(project => {
+        // Special handling for the distributed project
+        let imageUrl = project.image === 'distributed' 
+            ? `./assets/images/projects/distributed.jpeg` 
+            : `./assets/images/projects/${project.image}.png`;
+            
         projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project" />
-      <img src="assets/images/projects/newsboxandroid.png" alt="">
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-          </div>
-        </div>
-      </div>
-    </div>`
+        <div class="project-card" data-category="${project.category}">
+            <div class="project-image">
+                <img src="${imageUrl}" alt="${project.name}" />
+            </div>
+            <div class="project-content">
+                <h3>${project.name}</h3>
+                <p>${project.desc}</p>
+                <div class="project-links">
+                    <a href="${project.links.view}" class="project-link" target="_blank"><i class="fas fa-eye"></i> View</a>
+                    ${project.links.code ? `<a href="${project.links.code}" class="project-link" target="_blank"><i class="fas fa-code"></i> Code</a>` : ''}
+                </div>
+            </div>
+        </div>`;
     });
+
     projectsContainer.innerHTML = projectHTML;
 
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
-    // <!-- tilt js effect ends -->
 
     /* ===== SCROLL REVEAL ANIMATION ===== */
     const srtop = ScrollReveal({
@@ -143,8 +163,7 @@ function showProjects(projects) {
     });
 
     /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
+    srtop.reveal('.project-card', { interval: 200 });
 }
 
 fetchData().then(data => {

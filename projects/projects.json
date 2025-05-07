@@ -1,5 +1,25 @@
 [
   {
+    "name": "CrediWise Line of Credit System",
+    "desc": "AI-driven auto-approval system for lines of credit using machine learning and business rules for real-time loan decisioning",
+    "image": "loan",
+    "category": "data",
+    "links": {
+      "view": "https://github.com/Parth-Parakhiya/loan-eligibility-app",
+      "code": "https://github.com/Parth-Parakhiya/loan-eligibility-app"
+    }
+  },
+  {
+    "name": "Distributed File Storage System",
+    "desc": "Django-based distributed file storage system using Docker and MinIO for scalable, redundant, and secure file management",
+    "image": "distributed",
+    "category": "data",
+    "links": {
+      "view": "https://github.com/Parth-Parakhiya/DataCascade",
+      "code": "https://github.com/Parth-Parakhiya/DataCascade"
+    }
+  },
+  {
     "name": "LiveField Construction App",
     "desc": "I worked on backend development and data analysis during my tenure at the company",
     "image": "livefield",
