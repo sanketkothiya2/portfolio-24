@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="./assets/css/futuristic.css">
     <link rel="stylesheet" href="./assets/css/cursor.css">
     <link rel="stylesheet" href="./assets/css/layout-fix.css">
+    <link rel="stylesheet" href="./assets/css/about-enhanced.css">
+    <link rel="stylesheet" href="./assets/css/skills-enhanced.css">
+    <link rel="stylesheet" href="./assets/css/education-enhanced.css">
     
     <title>Sanket Kothiya | Full Stack Developer</title>
 </head>
@@ -107,26 +110,46 @@
             
             <div class="about-container">
                 <div class="about-image scroll-reveal">
-                    <img src="./assets/images/p-image.jpeg" alt="Sanket Kothiya" class="tilt-effect">
+                    <div class="image-wrapper">
+                        <img src="./assets/images/p-image.jpeg" alt="Sanket Kothiya" class="tilt-effect">
+                        <div class="tech-icons">
+                            <i class="fab fa-react" data-tooltip="React"></i>
+                            <i class="fab fa-node-js" data-tooltip="Node.js"></i>
+                            <i class="fab fa-python" data-tooltip="Python"></i>
+                            <i class="fas fa-database" data-tooltip="Databases"></i>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="about-content scroll-reveal">
                     <h3>I'm Sanket</h3>
-                    <p class="tag">Full Stack Developer | Backend Enthusiast | Aspiring Data Analyst</p>
+                    <div class="tag-container">
+                        <p class="tag"><i class="fas fa-code"></i> Full Stack Developer</p>
+                        <p class="tag"><i class="fas fa-server"></i> Backend Enthusiast</p>
+                        <p class="tag"><i class="fas fa-chart-line"></i> Aspiring Data Analyst</p>
+                    </div>
                     
-                    <p>I am a passionate and dedicated software developer with expertise in designing scalable, user-friendly web applications and crafting robust, secure backend systems. With a strong foundation in both frontend and backend technologies, I strive to create seamless and efficient digital experiences. Currently, I am expanding my skills into the exciting field of data analytics to harness the power of data for meaningful insights and impactful decision-making.</p>
+                    <p class="bio-text">I am a passionate and dedicated software developer with expertise in designing scalable, user-friendly web applications and crafting robust, secure backend systems. With a strong foundation in both frontend and backend technologies, I strive to create seamless and efficient digital experiences.</p>
+                    
+                    <p class="bio-text">Currently, I am expanding my skills into the exciting field of data analytics to harness the power of data for meaningful insights and impactful decision-making.</p>
                     
                     <div class="about-info">
                         <div class="info-item">
-                            <p><span>Email:</span> kothiyas@uwindsor.ca</p>
+                            <p><i class="fas fa-envelope"></i> <span>Email:</span> kothiyas@uwindsor.ca</p>
                         </div>
                         <div class="info-item">
-                            <p><span>Location:</span> Windsor, Canada</p>
+                            <p><i class="fas fa-map-marker-alt"></i> <span>Location:</span> Windsor, Canada</p>
+                        </div>
+                        <div class="info-item">
+                            <p><i class="fas fa-graduation-cap"></i> <span>Education:</span> Master of Applied Computing</p>
+                        </div>
+                        <div class="info-item">
+                            <p><i class="fas fa-language"></i> <span>Languages:</span> English, Hindi, Gujarati</p>
                         </div>
                     </div>
                     
-                    <a href="https://drive.google.com/file/d/14Owen3I6aFh8TqEP3YMT1TOrK26p1dq2/view?usp=sharing" target="_blank" class="btn-primary">
-                        Resume
+                    <a href="https://drive.google.com/file/d/14Owen3I6aFh8TqEP3YMT1TOrK26p1dq2/view?usp=sharing" target="_blank" class="btn-primary btn-glow">
+                        <i class="fas fa-file-alt"></i> Resume
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -139,8 +162,17 @@
         <div class="container">
             <h2 class="section-title">Skills & <span class="highlight">Abilities</span></h2>
             
+            <div class="skills-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                <button class="filter-btn" data-filter="tools">Tools & DevOps</button>
+                <button class="filter-btn" data-filter="data">Data Analysis</button>
+            </div>
+            
             <div class="skills-container" id="skillsContainer">
-                <!-- Skills will be loaded dynamically from skills.json -->
+                <!-- Skills will be loaded dynamically from skills.json with enhanced structure -->
             </div>
         </div>
     </section>
@@ -154,24 +186,34 @@
             
             <div class="education-container">
                 <div class="education-card scroll-reveal">
+                    <div class="status-indicator status-pursuing" title="Currently Pursuing"></div>
                     <div class="education-logo">
                         <img src="./assets/images/windsor.png" alt="University of Windsor">
                     </div>
                     <div class="education-info">
                         <h3>Master Of Applied Computing</h3>
                         <p>University Of Windsor</p>
-                        <p class="date">2024-2025 | Pursuing</p>
+                        <p class="date"><i class="fas fa-calendar-alt"></i> 2024-2025 | Pursuing</p>
+                        <div class="education-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Windsor, Ontario, Canada</p>
+                            <p><i class="fas fa-graduation-cap"></i> Graduate Studies</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="education-card scroll-reveal">
+                    <div class="status-indicator status-completed" title="Completed"></div>
                     <div class="education-logo">
                         <img src="./assets/images/adit.png" alt="ADIT">
                     </div>
                     <div class="education-info">
                         <h3>Bachelor Of Engineering in Computer Engineering</h3>
                         <p>A. D. Patel Institute of Technology | ADIT</p>
-                        <p class="date">2018-2022 | Completed</p>
+                        <p class="date"><i class="fas fa-calendar-alt"></i> 2018-2022 | Completed</p>
+                        <div class="education-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Gujarat, India</p>
+                            <p><i class="fas fa-award"></i> First Class with Distinction</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -377,24 +419,115 @@
     <script src="./assets/js/futuristic.js"></script>
     <script src="./assets/js/three-background.js"></script>
     <script>
-        // Load skills from JSON
+        // Define skill categories
+        const skillCategories = {
+            'ReactJS': { category: 'frontend', level: '90%' },
+            'ExpressJS': { category: 'backend', level: '85%' },
+            'NodeJS': { category: 'backend', level: '85%' },
+            'Nest.js': { category: 'backend', level: '80%' },
+            'Redux': { category: 'frontend', level: '85%' },
+            'MaterialUI': { category: 'frontend', level: '90%' },
+            'ChakraUI': { category: 'frontend', level: '85%' },
+            'TailwindCSS': { category: 'frontend', level: '95%' },
+            'Bootstrap': { category: 'frontend', level: '95%' },
+            'Sass': { category: 'frontend', level: '90%' },
+            'HTML5': { category: 'frontend', level: '98%' },
+            'CSS3': { category: 'frontend', level: '95%' },
+            'JavaScript': { category: 'frontend', level: '90%' },
+            'TypeScript': { category: 'frontend', level: '85%' },
+            'Java': { category: 'backend', level: '80%' },
+            'Python': { category: 'backend', level: '75%' },
+            'MongoDB': { category: 'database', level: '90%' },
+            'MySQL': { category: 'database', level: '85%' },
+            'PostgreSQL': { category: 'database', level: '80%' },
+            'AWS': { category: 'tools', level: '75%' },
+            'Heroku': { category: 'tools', level: '85%' },
+            'Netlify': { category: 'tools', level: '90%' },
+            'DigitalOcean': { category: 'tools', level: '80%' },
+            'jQuery': { category: 'frontend', level: '90%' },
+            'Git VCS': { category: 'tools', level: '90%' },
+            'GitHub': { category: 'tools', level: '95%' },
+            'WordPress': { category: 'frontend', level: '80%' },
+            'Docker': { category: 'tools', level: '75%' },
+            'Notion': { category: 'tools', level: '90%' },
+            'Jira': { category: 'tools', level: '85%' },
+            'Git': { category: 'tools', level: '95%' },
+            'GitLab': { category: 'tools', level: '85%' },
+            'Excel': { category: 'data', level: '85%' },
+            'Power BI': { category: 'data', level: '80%' },
+            'Tableau': { category: 'data', level: '75%' },
+            'Ubuntu': { category: 'tools', level: '85%' },
+            'Mac OS': { category: 'tools', level: '90%' },
+            'Windows': { category: 'tools', level: '95%' }
+        };
+        
+        // Load skills from JSON with enhanced features
         fetch('./skills.json')
             .then(response => response.json())
             .then(data => {
                 const skillsContainer = document.getElementById('skillsContainer');
                 
-                data.forEach(skill => {
+                // Clear container first
+                skillsContainer.innerHTML = '';
+                
+                // Add skills with animation delay and categories
+                data.forEach((skill, index) => {
+                    const skillInfo = skillCategories[skill.name] || { category: 'other', level: '70%' };
+                    
                     const skillCard = document.createElement('div');
                     skillCard.className = 'skill-card scroll-reveal';
+                    skillCard.style.setProperty('--i', index);
+                    skillCard.setAttribute('data-category', skillInfo.category);
+                    
+                    // Add animation delay based on index
+                    skillCard.style.animationDelay = `${index * 0.05}s`;
                     
                     skillCard.innerHTML = `
                         <img src="${skill.icon}" alt="${skill.name}">
                         <h3>${skill.name}</h3>
+                        <div class="skill-level">${skillInfo.level}</div>
+                        <div class="skill-category">${skillInfo.category}</div>
                     `;
                     
                     skillsContainer.appendChild(skillCard);
                 });
+                
+                // Initialize skill filtering
+                initSkillFiltering();
             });
+            
+        // Initialize skill filtering functionality
+        function initSkillFiltering() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const skillCards = document.querySelectorAll('.skill-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filter skills
+                    skillCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            // Reset animation
+                            card.style.animation = 'none';
+                            setTimeout(() => {
+                                card.style.animation = 'skill-appear 0.5s forwards';
+                            }, 10);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
         
         // Load projects from JSON
         fetch('./projects/projects.json')
