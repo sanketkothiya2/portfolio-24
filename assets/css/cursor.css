@@ -1,0 +1,48 @@
+/* Custom Cursor Styles */
+.custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: transform 0.1s;
+}
+
+.custom-cursor.hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent-color);
+  background-color: rgba(255, 0, 212, 0.1);
+}
+
+/* Hide default cursor when custom cursor is active */
+body {
+  cursor: none;
+}
+
+/* But show default cursor on small screens where custom cursor might be problematic */
+@media (max-width: 768px) {
+  .custom-cursor, .cursor-dot {
+    display: none;
+  }
+  
+  body {
+    cursor: auto;
+  }
+}

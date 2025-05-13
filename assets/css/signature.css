@@ -1,0 +1,82 @@
+/* Minimalist Signature Design */
+.signature-container {
+  position: relative;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(10, 10, 25, 0.5);
+  border-top: 1px solid rgba(137, 43, 226, 0.3);
+}
+
+.signature {
+  position: relative;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--light-text);
+  padding: 0.5rem 1rem;
+  z-index: 1;
+  display: inline-block;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.signature-container::before,
+.signature-container::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.signature-container::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.signature-container::after {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.code-brackets {
+  font-family: 'Courier New', monospace;
+  color: var(--accent-color);
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.year-highlight {
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.3rem;
+  color: var(--primary-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .signature {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .signature {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .signature-container::before,
+  .signature-container::after {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,285 @@
+/* Enhanced Skills Section Styling */
+.skills {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Futuristic background elements */
+.skills::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
+  top: -150px;
+  right: -150px;
+  z-index: 0;
+  animation: pulse-bg 15s infinite alternate;
+}
+
+.skills::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(137, 43, 226, 0.1), transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  z-index: 0;
+  animation: pulse-bg 20s infinite alternate-reverse;
+}
+
+@keyframes pulse-bg {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+/* Grid layout for skills */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Skill card styling */
+.skill-card {
+  background: var(--glass-bg);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Glowing border effect */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary-color), transparent, var(--secondary-color));
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+  animation: rotate-gradient 3s linear infinite;
+}
+
+@keyframes rotate-gradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skill icon styling */
+.skill-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.2rem;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.skill-card:hover img {
+  transform: translateY(-10px) scale(1.1);
+  filter: drop-shadow(0 0 10px var(--primary-color));
+}
+
+/* Skill name styling */
+.skill-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.skill-card:hover h3 {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(137, 43, 226, 0.5);
+}
+
+/* Progress indicator for skill level */
+.skill-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  transition: width 0.8s ease;
+}
+
+.skill-card:hover::after {
+  width: 100%;
+}
+
+/* Floating animation for cards */
+.skill-card {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Skill level indicator */
+.skill-level {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--light-text);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-level {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Skill category tags */
+.skill-category {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--secondary-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.skill-card:hover .skill-category {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Filter buttons for skills */
+.skills-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--light-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: 0 0 15px rgba(137, 43, 226, 0.5);
+}
+
+/* Loading animation for skills */
+@keyframes skill-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-card {
+  opacity: 0;
+  animation: skill-appear 0.5s forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 6rem 0;
+  }
+  
+  .skills-filter {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-card img {
+    width: 50px;
+    height: 50px;
+  }
+}
