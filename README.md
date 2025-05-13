@@ -1,3 +1,64 @@
+# Portfolio Website with Email Notification
+
+## Overview
+This portfolio website includes a contact form with real-time email notifications. When a visitor submits the form, it sends an email to your Gmail account and an auto-reply to the visitor.
+
+## Setup
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Configure Email Credentials
+Create a `.env` file in the root directory with the following content:
+```
+EMAIL_USER=your-gmail-address@gmail.com
+EMAIL_PASS=your-app-password
+PORT=5500
+```
+
+#### How to get an App Password for Gmail:
+1. Go to your Google Account settings
+2. Navigate to Security
+3. Enable 2-Step Verification if not already enabled
+4. Go to "App passwords"
+5. Create a new app password for "Mail" and "Other (Custom name)"
+6. Copy the generated password and use it in your .env file
+
+### 3. Start the Server
+For development:
+```bash
+npm run dev
+```
+
+For production:
+```bash
+npm start
+```
+
+## Features
+- Real-time form validation
+- Instant email notification to the website owner
+- Automatic confirmation email to the sender
+- Responsive design
+
+## Contact Form Flow
+1. User fills out the contact form
+2. Form is validated on the client-side
+3. Data is sent to the backend API
+4. Server sends email notification to you
+5. Server sends confirmation email to the user
+6. Success message displayed on the website
+
+## Customization
+You can customize the email templates in the server.js file to change the content of both the notification email and the auto-reply.
+
+## Troubleshooting
+- If emails are not being sent, check your .env file and make sure the credentials are correct
+- Verify that you're using an app password and not your regular Gmail password
+- Check if your Gmail has any security settings blocking the sending of emails
+
 ## Portfolio-Website
 Portfolio website built using HTML5, CSS3, JavaScript, and jQuery.
 
